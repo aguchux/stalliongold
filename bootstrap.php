@@ -16,12 +16,6 @@ if (file_exists(DOT . '/config.php')) {
 	$Core = new Apps\Core;
 	$Template = new Apps\Template;
 
-	//Update live/online status of users//
-	if ($Template->auth) {
-
-	}
-	//Update live/online status of users//
-
 } else {
 	die('config.php not found!');
 }
