@@ -97,13 +97,19 @@ $Route->add('/database', function () {
     $Template->assign("title", "TITAN GOLD | Account Area");
     $Template->render("database");
 }, 'GET');
-
+// View profile
 $Route->add('/database/viewprofile', function () {
     $Template = new Apps\Template;
     $Template->assign("title", "TITAN GOLD | Account Area");
     $Template->render("databases.viewprofile");
 }, 'GET');
 
+//Gold assets
+$Route->add('/database/goldassets', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.goldassets");
+}, 'GET');
 
 //ADMIN DATABASE//
 
