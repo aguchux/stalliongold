@@ -1,0 +1,4 @@
+
+vendor/
+templates/assets/
+composer.lock
