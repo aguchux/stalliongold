@@ -1,0 +1,45 @@
+{
+    "name": "firm/titangold",
+    "description": "",
+    "type": "project",
+    "version": "20.9.30",
+    "keywords": [
+        "psr4",
+        "template"
+    ],
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "titangold",
+            "email": "info@titangold.com",
+            "homepage": "https://titangold.com/",
+            "role": "Developer"
+        }
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "autoload": {
+        "classmap": [
+            "_apps/",
+            "_apps/Apps/"
+        ],
+        "psr-4": {
+            "Apps\\": [
+                "_apps/",
+                "_apps/Apps/"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=5.6.36"
+    },
+    "scripts": {},
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "bin": [
+        "application"
+    ]
+}

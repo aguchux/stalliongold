@@ -1,0 +1,71 @@
+---MYSQL QUERIES, DATABASE AND TABLE NAMES
+
+	
+** DATABASE NAME: stallion **
+
+	TABLE NAMES
+
+1] members [BY CLIENT]
+
+CREATE TABLE members (
+	user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(255) NOT NULL,
+	fullname VARCHAR(255) NOT NULL,
+	email VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	confirmpassword VARCHAR(255) NOT NULL,
+	dateofbirth VARCHAR(255) NOT NULL,
+	country VARCHAR(255) NOT NULL,
+	photo VARCHAR(255) NOT NULL,
+	reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+
+
+2] login [BY CLIENT]
+
+CREATE TABLE login (
+	login_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(255) NOT NULL,
+	reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+
+
+
+3] account_summary [BY ADMIN]
+
+CREATE TABLE account_summary (
+	as_id int NOT NULL AUTO_INCREMENT,
+	user_id int NOT NULL,
+	currentGoldValue VARCHAR(255) NOT NULL,
+	currency VARCHAR(255) NOT NULL,
+	lastTransAmt VARCHAR(255) NOT NULL,
+	lastTransDate VARCHAR(255) NOT NULL,
+	reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(as_id),
+	FOREIGN KEY(user_id) REFERENCES members(user_id)
+)
+
+
+
+4] merge [BY CLIENT]
+
+CREATE TABLE merge (
+	merge_id int NOT NULL AUTO_INCREMENT,
+	user_id int NOT NULL,
+	mgGoldAmt VARCHAR(255) NOT NULL,
+	mgGoldCurr VARCHAR(255) NOT NULL,
+	mgfullname VARCHAR(255) NOT NULL,
+	mgemail VARCHAR(255) NOT NULL,
+	mgdateofbirth VARCHAR(255) NOT NULL,
+	mgaddress VARCHAR(255) NOT NULL,
+	mgphoto VARCHAR(255) NOT NULL,
+	reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY(merge_id),
+	FOREIGN KEY(user_id) REFERENCES members(user_id)
+)
+
+
+DELETE FROM 'members' WHERE 'members'.'user_id' = 1;
+
+
