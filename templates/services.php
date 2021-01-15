@@ -3,8 +3,8 @@
     <section class="banner_area" data-stellar-background-ratio="0.5">
         <h2>Our Services</h2>
         <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services" class="active">Services</a></li>
         </ol>
     </section>
     <!-- End Banner area -->
@@ -31,7 +31,7 @@
                             </div>
                             <p>At Titan Gold & Resources, we specialize in a range of exceptional services such as gold assaying, minting, refining, investing and trading on professionally-held gold resources in secure global bullion vaults valued at millions of dollars.</p>
                             <p>Operating for more than 35 years in Dubai, Stallion Gold Resources is the most competent and respected gold investment platform in the Arabic Gulf region. We pioneered the online gold trading and investment industry, with up to 800 tons of gold per year held in global vaults.</p>
-                            <a href="contact.html" class="button_all">Contact Now</a>
+                            <a href="/contact" class="button_all">Contact Now</a>
                         </div>
                     </div>
                     <div class="single_facilities col-sm-5 painting webdesign">
@@ -54,56 +54,56 @@
                 <img src="images/gallery/gl-1.jpg" alt="">
                 <div class="gallery_hover">
                     <h4>Gold Investment</h4>
-                    <a href="login.php">VIEW SERVICE</a>
+                    <a href="/login">VIEW SERVICE</a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
                 <img src="images/gallery/gl-2.jpg" alt="">
                 <div class="gallery_hover">
                     <h4>Online Trading</h4>
-                    <a href="login.php">VIEW SERVICE</a>
+                    <a href="/login">VIEW SERVICE</a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
                 <img src="images/gallery/gl-3.jpg" alt="">
                 <div class="gallery_hover">
                     <h4>Gold Funds Deposit</h4>
-                    <a href="login.php">VIEW SERVICE</a>
+                    <a href="/login">VIEW SERVICE</a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
                 <img src="images/gallery/gl-4.jpg" alt="">
                 <div class="gallery_hover">
                     <h4>Wholesale Gold Insurance</h4>
-                    <a href="login.php">VIEW SERVICE</a>
+                    <a href="/login">VIEW SERVICE</a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
                 <img src="images/gallery/gl-5.jpg" alt="">
                 <div class="gallery_hover">
                     <h4>Gold Assaying</h4>
-                    <a href="login.php">VIEW SERVICE</a>
+                    <a href="/login">VIEW SERVICE</a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
                 <img src="images/gallery/gl-6.jpg" alt="">
                 <div class="gallery_hover">
                     <h4>Gold Minting</h4>
-                    <a href="login.php">VIEW SERVICE</a>
+                    <a href="/login">VIEW SERVICE</a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
                 <img src="images/gallery/gl-7.jpg" alt="">
                 <div class="gallery_hover">
                     <h4>Gold Refining</h4>
-                    <a href="login.php">VIEW SERVICE</a>
+                    <a href="/login">VIEW SERVICE</a>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 gallery_iner p0">
                 <img src="images/gallery/gl-8.jpg" alt="">
                 <div class="gallery_hover">
                     <h4>Bullion Vault Storage</h4>
-                    <a href="login.php">VIEW SERVICE</a>
+                    <a href="/login">VIEW SERVICE</a>
                 </div>
             </div>
         </div>
