@@ -1,4 +1,4 @@
 
-vendor/
-templates/assets/
+/vendor/
+/templates/assets/
 composer.lock
