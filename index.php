@@ -49,6 +49,7 @@ $Route->add('/register', function () {
 
 
 //FORM POSTS//
+//Login post
 $Route->add('/forms/login', function () {
 
     $Mysqli = new Apps\MysqliDb;
@@ -85,6 +86,12 @@ $Route->add('/forms/login', function () {
     }
 }, 'POST');
 
+//Register Post
+$Route->add('/forms/register', function () {
+    
+}, 'POST');
+
+
 //FORM POSTS//
 
 
@@ -110,6 +117,35 @@ $Route->add('/database/goldassets', function () {
     $Template->assign("title", "TITAN GOLD | Account Area");
     $Template->render("databases.goldassets");
 }, 'GET');
+
+//Edit Profile
+$Route->add('/database/editprofile', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.editprofile");
+}, 'GET');
+
+//Merge
+$Route->add('/database/merge', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.merge");
+}, 'GET');
+
+//Merge_form
+$Route->add('/database/merge_form', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.merge_form");
+}, 'GET');
+
+//Terms and conditions
+$Route->add('/database/tandc', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.tandc");
+}, 'GET');
+
 
 //ADMIN DATABASE//
 

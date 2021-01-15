@@ -3,8 +3,8 @@
     <section class="banner_area" data-stellar-background-ratio="0.5">
         <h2>Contact Us</h2>
         <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html" class="active">Contact Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact" class="active">Contact Us</a></li>
         </ol>
     </section>
     <!-- End Banner area -->
