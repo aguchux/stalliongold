@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="copyright_area">
-            Copyright 2019 All rights reserved. Designed by <a href="javascript:void(0);">Colorlib.</a>
+            Copyright 2021 All rights reserved.
         </div>
     </footer>
     <!-- End Footer Area -->

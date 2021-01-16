@@ -49,6 +49,7 @@ $Route->add('/register', function () {
 
 
 //FORM POSTS//
+//Login post
 $Route->add('/forms/login', function () {
 
     $Mysqli = new Apps\MysqliDb;
@@ -85,6 +86,77 @@ $Route->add('/forms/login', function () {
     }
 }, 'POST');
 
+//Register Post
+$Route->add('/forms/register', function () {
+
+    $Mysqli = new Apps\MysqliDb;
+    $Template = new Apps\Template;
+
+    //The path to store the uploaded image
+    $target = "_store/uploads/" . basename($_FILES['photo']['name']);
+    $imageFileType = pathinfo($target, PATHINFO_EXTENSION);
+
+    //Insert the values into the database table
+    $username = $_POST['username'];
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmpassword = $_POST['confirmpassword'];
+    $dateofbirth = $_POST['dateofbirth'];
+    $country = $_POST['country'];
+    $photo = $_FILES['photo']['name'];
+
+    //Check whether username already exists
+    $Mysqli->where("username", $username);
+    $row = $Mysqli->getOne("members");
+    $count = (int)$row['user_id'];
+
+    if ($count == 0) {
+
+        //The two passwords are equal to each other
+        if ($_POST['password'] == $_POST['confirmpassword']) {
+
+            //Make sure file type is image
+            if (preg_match("!image!", $_FILES['photo']['type'])) {
+
+                //Uploading image into uploads/ folder and redirect to register_success.php page
+                if (move_uploaded_file($_FILES['photo']['tmp_name'], $target)) {
+
+                    $result = (int)$Mysqli->insert("members", array(
+                        "username" => $username,
+                        "fullname" => $fullname,
+                        "email" => $email,
+                        "password" => $password,
+                        "confirmpassword" => $confirmpassword,
+                        "dateofbirth" => $dateofbirth,
+                        "country" => $country,
+                        "photo" => $photo
+                    ));
+                    if($result){
+                        $Template->redirect("/register_success");
+                    }else{
+                        $Template->store('message',"Ops registration failed!");
+                        $Template->redirect("/register");    
+                    }
+                } else {
+                    $Template->store('message',"File upload and registration failed!");
+                    $Template->redirect("/register");
+                }
+            } else {
+                $Template->store('message',"Please, only upload JPG, PNG or GIF images!");
+                $Template->redirect("/register");    
+            }
+        } else {
+            $Template->store('message',"The two passwords do not match!");
+            $Template->redirect("/register");
+        }
+    } else {
+        $Template->store('message',"The username already exists. Please select another username!");
+        $Template->redirect("/register"); 
+    }
+}, 'POST');
+
+
 //FORM POSTS//
 
 
@@ -97,22 +169,55 @@ $Route->add('/database', function () {
     $Template->assign("title", "TITAN GOLD | Account Area");
     $Template->render("database");
 }, 'GET');
-
+// View profile
 $Route->add('/database/viewprofile', function () {
     $Template = new Apps\Template;
     $Template->assign("title", "TITAN GOLD | Account Area");
     $Template->render("databases.viewprofile");
 }, 'GET');
 
+//Gold assets
+$Route->add('/database/goldassets', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.goldassets");
+}, 'GET');
+
+//Edit Profile
+$Route->add('/database/editprofile', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.editprofile");
+}, 'GET');
+
+//Merge
+$Route->add('/database/merge', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.merge");
+}, 'GET');
+
+//Merge_form
+$Route->add('/database/merge_form', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.merge_form");
+}, 'GET');
+
+//Terms and conditions
+$Route->add('/database/tandc', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.tandc");
+}, 'GET');
+
 
 //ADMIN DATABASE//
 
 
-
-
-
 //Logout Sessions//
-$Route->add('/database/logout',
+$Route->add(
+    '/database/logout',
     function () {
         $Template = new Apps\Template;
         $Template->expire();
