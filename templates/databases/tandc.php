@@ -84,7 +84,7 @@ $row  = $Mysqli->getOne('members');
 				<div style="height:10px;"></div>
 				<hr>
 			</div>	
-			
+			<!-- for git -->
 			<!-- copyright section -->
 			<div class="footer_glow">
 				<p>Copyright &copy 2019 Stallion Gold Resources</p>

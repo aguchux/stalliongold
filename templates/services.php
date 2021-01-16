@@ -15,7 +15,7 @@
             <div class="architecture_area services_pages">
                 <div class="portfolio_filter portfolio_filter_2">
                     <ul>
-                        <li data-filter="*" class="active"><a href=""><i class="fa fa-wrench" aria-hidden="true"></i>INVESTMENT</a></li>
+                        <li data-filter="*" class="active"><a href=""><i class="faGIT  fa-wrench" aria-hidden="true"></i>INVESTMENT</a></li>
                         <li data-filter=".building"><a href=""><i class="fa fa-cogs" aria-hidden="true"></i>ONLINE TRADING</a></li>
                         <li data-filter=".webdesign"><a href=""><i class="fa fa-cog" aria-hidden="true"></i>ASSAYING</a></li>
                         <li data-filter=".adversting"><a href=""><i class="fa fa-heart" aria-hidden="true"></i>REFINING</a></li>
