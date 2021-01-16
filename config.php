@@ -40,6 +40,7 @@ define("auth_session_key","logged_in");
 define("auth_url","/login");
 
 define("domain", "https://titangoldllc.com/");
+//define("domain", "https://titangoldllc.com/");
 
 define("db_host","localhost");
 define("db_user","qhfdxkia_idgdb");
