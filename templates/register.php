@@ -4,12 +4,15 @@
 
 <head>
 	<meta charset="utf-8">
+	
+	<base href="<?= domain ?>" />
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Putting customers' needs as a top priority and earning a spot as one of the world's best online gold platforms">
 	<meta name="keywords" content="gold, stallion, resources">
 
-    <title>Stallion Gold Resources | Welcome</title>
+    <  <title><?= $title ?></title>
 	
 	<script>
 		addEventListener("load", function () {
@@ -44,7 +47,7 @@
 		<div class="sub-main-w3">
 			<div class="bg-content-w3pvt">
 				<div class="top-content-style">
-					<a href="index.html"><img src="<?= $assets ?>images/sgr_user.png" alt="Stallion Gold"></a>
+					<a href="/"><img src="<?= $assets ?>images/sgr_user.png" alt="Stallion Gold"></a>
 				</div>
 				<form action="/forms/register" method="post" enctype="multipart/form-data">
 					<p class="legend">Register Here<span class="fa fa-hand-o-down"></span></p>

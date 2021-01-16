@@ -38,6 +38,7 @@ $Route->add('/login', function () {
     $Template->assign("title", "TITAN GOLD | login");
     $Template->render("login");
 }, 'GET');
+
 $Route->add('/register', function () {
     $Template = new Apps\Template;
     $Template->assign("title", "TITAN GOLD | REGISTER");
@@ -98,10 +99,34 @@ $Route->add('/database', function () {
     $Template->render("database");
 }, 'GET');
 
+$Route->add('/database/goldassets', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.goldassets");
+}, 'GET');
+
+$Route->add('/database/changepassword', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.changepassword");
+}, 'GET');
+
+$Route->add('/database/editprofile', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.editprofile");
+}, 'GET');
+
+$Route->add('/database/merge', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.merge");
+}, 'GET');
+
 $Route->add('/database/viewprofile', function () {
     $Template = new Apps\Template;
     $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.viewprofile");
+    $Template->render("databases.merge_form");
 }, 'GET');
 
 

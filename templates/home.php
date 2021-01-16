@@ -100,7 +100,7 @@
                    </div>
                    <div class="cns-content">
                         <i class="fa fa-home" aria-hidden="true"></i>
-                        <a href="register.php">SAFE GOLD VAULTS</a>
+                        <a href="/register">SAFE GOLD VAULTS</a>
                         <p>Open an online gold investment account today to commence trading securely on varied gold resources at the comfort of your home</p>
                    </div>
                 </div>
@@ -250,7 +250,7 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <a href="login.php">35+ YEARS OF EXPERIENCE</a>
+                            <a href="/login">35+ YEARS OF EXPERIENCE</a>
                             <p>We connect buyers and sellers from all over the world. Take advantage of the lowest costs for buying, selling and storing gold.</p>
                         </div>
                     </div>
@@ -261,7 +261,7 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <a href="register.php">FLEXIBLE TRADING</a>
+                            <a href="/register">FLEXIBLE TRADING</a>
                             <p>You can sell gold at any time, and receive your money by the next business day. Open a free account today and registration takes only a few minutes.</p>
                         </div>
                     </div>
@@ -272,7 +272,7 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <a href="contact.html">BEST CUSTOMER SERVICES</a>
+                            <a href="/contact">BEST CUSTOMER SERVICES</a>
                             <p>Our team of qualified personnel work round the clock to ensure seamless online gold trading for our esteemed clients. Be sure to contact us at your spare time.</p>
                         </div>
                     </div>
