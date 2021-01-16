@@ -1,0 +1,37 @@
+<IfModule mod_rewrite.c>
+
+	<IfModule mod_negotiation.c>
+		Options -MultiViews -Indexes
+	</IfModule>
+
+	<filesMatch ".(jpg|jpeg|png|gif|ico)$">
+		Header set Cache-Control "max-age=2592000, public"
+	</filesMatch>
+
+	<IfModule mod_headers.c>
+		Header always set Report-To '{"group":"default","max_age":10886400,"endpoints":[{"url":"https://jmg3atk5.uriports.com/reports"}],"include_subdomains":true}'
+		Header always set NEL '{"report_to":"default","max_age":2592000,"include_subdomains":true,"failure_fraction":1.0}'
+	</IfModule>
+
+	RewriteEngine On
+	RewriteBase /
+
+	# Handle Authorization Header
+	RewriteCond %{HTTP:Authorization} .
+	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+	RewriteCond %{HTTPS} !=on
+	RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
+	# Redirect Trailing Slashes If Not A Folder...
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} (.+)/$
+	RewriteRule ^ %1 [L,R=301]
+
+	# Handle Front Controller...
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^ index.php [L]
+
+</IfModule>
+
