@@ -94,7 +94,7 @@ $Self->store('mgphoto',$row_m['mgphoto']);
 			</div>
 			<div id="top_content_second">
 				<div id="image_dash">
-					<p><?php echo "<img src='uploads/" . $Self->storage("photo") . "' width=200 height=200 >"; ?></p>
+					<p><?php echo "<img src='_store/uploads/" . $Self->storage("photo") . "' width=200 height=200 >"; ?></p>
 				</div>
 				<div id="text_dash">
 					<table>

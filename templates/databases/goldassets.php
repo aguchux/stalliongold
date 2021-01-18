@@ -19,7 +19,7 @@ $row  = $Mysqli->getOne('members');
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<?= domain ?>
+	<base href="<?= domain ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Putting customers' needs as a top priority and earning a spot as one of the world's best online gold platforms">
