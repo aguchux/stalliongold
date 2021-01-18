@@ -86,7 +86,7 @@ $Route->add('/forms/login', function () {
     }
 }, 'POST');
 
-//Register Post
+//Register Post route
 $Route->add('/forms/register', function () {
 
     $Mysqli = new Apps\MysqliDb;
