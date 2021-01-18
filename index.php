@@ -132,27 +132,28 @@ $Route->add('/forms/register', function () {
                         "country" => $country,
                         "photo" => $photo
                     ));
-                    if($result){
+
+                    if ($result) {
                         $Template->redirect("/register_success");
-                    }else{
-                        $Template->store('message',"Ops registration failed!");
-                        $Template->redirect("/register");    
+                    } else {
+                        $Template->store('message', "Ops registration failed!");
+                        $Template->redirect("/register");
                     }
                 } else {
-                    $Template->store('message',"File upload and registration failed!");
+                    $Template->store('message', "File upload and registration failed!");
                     $Template->redirect("/register");
                 }
             } else {
-                $Template->store('message',"Please, only upload JPG, PNG or GIF images!");
-                $Template->redirect("/register");    
+                $Template->store('message', "Please, only upload JPG, PNG or GIF images!");
+                $Template->redirect("/register");
             }
         } else {
-            $Template->store('message',"The two passwords do not match!");
+            $Template->store('message', "The two passwords do not match!");
             $Template->redirect("/register");
         }
     } else {
-        $Template->store('message',"The username already exists. Please select another username!");
-        $Template->redirect("/register"); 
+        $Template->store('message', "The username already exists. Please select another username!");
+        $Template->redirect("/register");
     }
 }, 'POST');
 
