@@ -57,8 +57,8 @@ $row  = $Mysqli->getOne('members');
 				<ul>
 				<li><a href="/database">MY PERSONAL ACCOUNT</a></li>
 					<li><a href="/database/viewprofile" >VIEW MY PROFILE</a></li>
-					<li><a href="/database/goldassets" class="current">MY GOLD ASSETS</a></li>
-					<li><a href="/database/merge">MERGE WITH PARTNER</a></li>
+					<li><a href="/database/goldassets" >MY GOLD ASSETS</a></li>
+					<li><a href="/database/merge" class="current">MERGE WITH PARTNER</a></li>
 					<li><a href="/database/tandc">TERMS & CONDITIONS</a></li>
 					<li><a href="/database/logout">LOG OUT</a></li>
 				</ul>
@@ -81,7 +81,7 @@ $row  = $Mysqli->getOne('members');
 						<tr><td style="color:#fff; background-color:#c29226;"><strong>PASSWORD</strong></td><td><?php echo $row["password"]; ?></td></tr>
 						<tr><td style="color:#fff; background-color:#c29226;"><strong>DATE OF BIRTH</strong></td><td><?php echo $row["dateofbirth"]; ?></td></tr>
 						<tr><td style="color:#fff; background-color:#c29226;"><strong>COUNTRY</strong></td><td><?php echo $row["country"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PHOTO</strong></td><td><?php echo "<img src='uploads/".$row["photo"]."' width=150 height=150 >"; ?></td></tr>
+						<tr><td style="color:#fff; background-color:#c29226;"><strong>PHOTO</strong></td><td><?php echo "<img src='_store/uploads/".$row["photo"]."' width=150 height=150 >"; ?></td></tr>
 					</table>
 				</div>
 				
@@ -89,7 +89,7 @@ $row  = $Mysqli->getOne('members');
 				<div style="height:25px;"></div>
 				
 				<div class="edit_kong">
-					<a href="merge_form"><div id="transactBar">CLICK TO MERGE WITH PARTNER</div></a>
+					<a href="/database/merge_form"><div id="transactBar">CLICK TO MERGE WITH PARTNER</div></a>
 				</div>
 			</div>
 			
@@ -101,7 +101,7 @@ $row  = $Mysqli->getOne('members');
 			
 			<!-- copyright section -->
 			<div class="footer_glow">
-				<p>Copyright &copy 2019 Titan Gold Resources</p>
+				<p>Copyright &copy 2021 Titan Gold & Resources</p>
 			</div>
 		</div>
 	</div>

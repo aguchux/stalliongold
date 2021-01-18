@@ -57,9 +57,9 @@ $row  = $Mysqli->getOne('members');
 				<ul>
 				<li><a href="/database">MY PERSONAL ACCOUNT</a></li>
 					<li><a href="/database/viewprofile" >VIEW MY PROFILE</a></li>
-					<li><a href="/database/goldassets" class="current">MY GOLD ASSETS</a></li>
+					<li><a href="/database/goldassets">MY GOLD ASSETS</a></li>
 					<li><a href="/database/merge">MERGE WITH PARTNER</a></li>
-					<li><a href="/database/tandc">TERMS & CONDITIONS</a></li>
+					<li><a href="/database/tandc" class="current">TERMS & CONDITIONS</a></li>
 					<li><a href="/database/logout">LOG OUT</a></li>
 				</ul>
 			</nav>
@@ -87,7 +87,7 @@ $row  = $Mysqli->getOne('members');
 			<!-- for git -->
 			<!-- copyright section -->
 			<div class="footer_glow">
-				<p>Copyright &copy 2021 Titan Gold Resources</p>
+				<p>Copyright &copy 2021 Titan Gold & Resources</p>
 			</div>
 		</div>
 	</div>

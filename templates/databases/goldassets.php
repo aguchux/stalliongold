@@ -19,7 +19,7 @@ $row  = $Mysqli->getOne('members');
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<?= domain ?>
+	<base href="<?= domain ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Putting customers' needs as a top priority and earning a spot as one of the world's best online gold platforms">
@@ -82,7 +82,7 @@ $row  = $Mysqli->getOne('members');
 						<tr><td style="color:#fff; background-color:#c29226;"><strong>PASSWORD</strong></td><td><?php echo $row["password"]; ?></td></tr>
 						<tr><td style="color:#fff; background-color:#c29226;"><strong>DATE OF BIRTH</strong></td><td><?php echo $row["dateofbirth"]; ?></td></tr>
 						<tr><td style="color:#fff; background-color:#c29226;"><strong>COUNTRY</strong></td><td><?php echo $row["country"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PHOTO</strong></td><td><?php echo "<img src='uploads/".$row["photo"]."' width=150 height=150 >"; ?></td></tr>
+						<tr><td style="color:#fff; background-color:#c29226;"><strong>PHOTO</strong></td><td><?php echo "<img src='_store/uploads/".$row["photo"]."' width=150 height=150 >"; ?></td></tr>
 					</table>
 				</div>
 			<!-- divider section -->			
@@ -93,7 +93,7 @@ $row  = $Mysqli->getOne('members');
 			
 			<!-- copyright section -->
 			<div class="footer_glow">
-				<p>Copyright &copy 2021 Titan Gold Resources</p>
+				<p>Copyright &copy 2021 Titan Gold & Resources</p>
 			</div>
 		</div>
 	</div>

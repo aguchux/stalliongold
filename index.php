@@ -212,6 +212,12 @@ $Route->add('/database/tandc', function () {
     $Template->render("databases.tandc");
 }, 'GET');
 
+//Change password
+$Route->add('/database/changepassword', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.changepassword");
+}, 'GET');
 
 //ADMIN DATABASE//
 
