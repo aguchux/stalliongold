@@ -43,6 +43,11 @@ $Route->add('/register', function () {
     $Template->assign("title", "TITAN GOLD | REGISTER");
     $Template->render("register");
 }, 'GET');
+$Route->add('/register_success', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Thank You");
+    $Template->render("register_success");
+}, 'GET');
 //Home page//
 
 
