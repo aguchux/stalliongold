@@ -39,8 +39,8 @@
                         <p>Do you have questions or inquiries?</p>
                         <ul class="my_address">
                             <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>info@titangoldllcres.com</a></li>
-                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+971 52 711 4638</a></li>
-                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Plot No. 2H, Phase 2, Plot No.485-222, Jumeirah Lakes Towers, DMCC, Sheikh Zayed Road, P.O. Box 24307, Dubai, UAE </span></a></li>
+                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+971 52 711 5244</a></li>
+                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>DMCC-EZ-03-04, Jumeirah Lakes Towers Dubai</span></a></li>
                         </ul>
                     </address>
                 </div>
