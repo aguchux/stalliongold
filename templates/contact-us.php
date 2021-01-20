@@ -31,7 +31,7 @@
                             <a href="#">email</a>
                         </div>
                         <div class="address">
-                            <a href="#">Plot No. 2H, Phase 2, Plot No.485-222, Jumeirah Lakes Towers, DMCC, Sheikh Zayed Road, P.O. Box 24307, Dubai, UAE </a>
+                            <a href="#"> DMCC-EZ-03-04, Jumeirah Lakes Towers Dubai</a>
                             <a href="#">+971 52 711 5244</a>
                             <a href="#">info@titangoldllcres.com</a>
                         </div>
