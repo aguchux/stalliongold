@@ -81,8 +81,6 @@ $row  = $Mysqli->getOne('members');
 						<input name="fullname" type="text" id="fullname" value="<?php echo $row["fullname"]; ?>" />
 						<label>EMAIL:</label>
 						<input name="email" type="text" id="email" value="<?php echo $row["email"]; ?>" />
-						<label>PASSWORD:</label>
-						<input name="password" type="text" id="password" value="<?php echo $row["password"]; ?>" />
 						<label>DATE OF BIRTH:</label>
 						<input name="dateofbirth" type="text" id="dateofbirth" value="<?php echo $row["dateofbirth"]; ?>" />
 						<label>COUNTRY:</label>
@@ -94,7 +92,7 @@ $row  = $Mysqli->getOne('members');
 				</div>
 				
 				<div class="edit_kong">
-					<a href="viewprofile.php"><div id="transactBar">GO BACK</div></a>
+					<a href="/database/viewprofile"><div id="transactBar">GO BACK</div></a>
 				</div>
 			</div>
 			

@@ -70,6 +70,19 @@ $row  = $Mysqli->getOne('members');
 				<p>Please, kindly edit the fields you want to change. Any field that is not to be changed should be left as it is. Thanks.</p>
 				<hr>
 			</div>
+
+			<div id="top_content_third">				
+				<div class="profile_form">
+					<form action="forms/database/changepassword" method="POST" name="RegisterForm" id="RegisterForm" enctype="multipart/form-data">
+						<label>OLD PASSWORD:</label>
+						<input name="old_password" type="text" id="old_password" value="" required />
+						<label>NEW PASSWORD:</label>
+						<input name="new_password" type="text" id="new_password" required />
+						<br>
+						<br>
+						<input type="submit" name="submit" class="buttonsneh" value="CHANGE PASSWORD" />
+					</form>
+				</div>
 			
 			<div id="top_content_second">				
 				<div>
