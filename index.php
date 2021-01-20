@@ -4,6 +4,10 @@
 define('DOT', '.');
 require_once DOT . "/bootstrap.php";
 
+
+require_once DOT . "/_public/dashboard.php";
+
+
 //Home page//
 $Route->add('/', function () {
     $Template = new Apps\Template;

@@ -72,21 +72,29 @@ $row  = $Mysqli->getOne('members');
 				<hr>
 			</div>
 
-			<div id="top_content_second">				
-				<div>
-					<table>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>USERNAME</strong></td><td><?php echo $row["username"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>FULL NAME</strong></td><td><?php echo $row["fullname"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>EMAIL</strong></td><td><?php echo $row["email"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PASSWORD</strong></td><td><?php echo $row["password"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>DATE OF BIRTH</strong></td><td><?php echo $row["dateofbirth"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>COUNTRY</strong></td><td><?php echo $row["country"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PHOTO</strong></td><td><?php echo "<img src='_store/uploads/".$row["photo"]."' width=150 height=150 >"; ?></td></tr>
-					</table>
+			<div id="top_content_third">			
+				<div class="profile_form">
+					<form action="/forms/database/editprofile" method="POST" name="RegisterForm" id="RegisterForm" enctype="multipart/form-data">
+						<label>USERNAME:</label>
+						<input name="username" type="text" id="username" readonly value="<?php echo $row["username"]; ?>" />
+						<label>FULL NAME:</label>
+						<input name="fullname" type="text" id="fullname" value="<?php echo $row["fullname"]; ?>" />
+						<label>EMAIL:</label>
+						<input name="email" type="text" id="email" value="<?php echo $row["email"]; ?>" />
+						<label>PASSWORD:</label>
+						<input name="password" type="text" id="password" value="<?php echo $row["password"]; ?>" />
+						<label>DATE OF BIRTH:</label>
+						<input name="dateofbirth" type="text" id="dateofbirth" value="<?php echo $row["dateofbirth"]; ?>" />
+						<label>COUNTRY:</label>
+						<input name="country" type="text" id="country" value="<?php echo $row["country"]; ?>" />
+						<br>
+						<br>
+						<input type="submit" name="submit" value="UPDATE PROFILE" />
+					</form>
 				</div>
 				
 				<div class="edit_kong">
-					<a href="/database/viewprofile"><div id="transactBar">GO BACK</div></a>
+					<a href="viewprofile.php"><div id="transactBar">GO BACK</div></a>
 				</div>
 			</div>
 			

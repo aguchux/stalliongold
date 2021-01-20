@@ -7,10 +7,16 @@ if(empty($Self->storage('user_id'))){
 }
 
 
-$Mysqli = new Apps\MysqliDb;
+$Mysqli_m = new Apps\MysqliDb;
+$Mysqli_u = new Apps\MysqliDb;
+
 $user = $Self->storage('user_id');
-$Mysqli->where("user_id",$user);
-$row  = $Mysqli->getOne('members');
+
+$Mysqli_m->where("user_id",$user);
+$row_m  = $Mysqli_m->getOne('merge');
+
+$Mysqli_u->where("user_id",$user);
+$row_u  = $Mysqli_u->getOne('members');
 
 ?>
 <!DOCTYPE html>
@@ -71,20 +77,43 @@ $row  = $Mysqli->getOne('members');
 				<hr>
 			</div>
 			
-			
-			<div id="top_content_second">				
+			<div class="gold_assets">				
 				<div>
+
+					<?php if( isset($row['merge_id'])): ?>
 					<table>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>USERNAME</strong></td><td><?php echo $row["username"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>FULL NAME</strong></td><td><?php echo $row["fullname"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>EMAIL</strong></td><td><?php echo $row["email"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PASSWORD</strong></td><td><?php echo $row["password"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>DATE OF BIRTH</strong></td><td><?php echo $row["dateofbirth"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>COUNTRY</strong></td><td><?php echo $row["country"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PHOTO</strong></td><td><?php echo "<img src='_store/uploads/".$row["photo"]."' width=150 height=150 >"; ?></td></tr>
+						<tr>
+							<td><a><?php echo "<img src='_store/uploads/".$row_u["photo"]."' width=200 height=200 >"; ?></a></td>
+							<td><a><?php if (isset($row_m["mgphoto"])) {
+										echo "<img src='_store/uploads/".$row_m["mgphoto"]."' width=200 height=200 >";
+										} else {
+											echo "<img src='images/admin_img.jpg' width=200 height=200 >";
+										}
+									?>
+							</td>
+						</tr>
+						<tr>
+							<td><strong>INVESTOR</strong></td>
+							<td><strong>PARTNER (NEXT OF KIN)</strong></td>
+						</tr>
 					</table>
+					<?php endif; ?>
+										
+					<p style="text-align:center; color:#ff0000; font-size: 28px; font-weight:600; line-height:1.6;">
+						<?php if (isset($row["mgfullname"])) { 
+							echo 'Congratulations ' . $row_u['fullname'] . ', you have successfully been merged with your partner ' . $row_m['mgfullname'] . '. The total
+									value of the Gold merged is ' . $row_m['mgGoldAmt'] . ' and the currency is in ' . $row_m['mgGoldCurr'] . '. You and your partner will receive
+									a large profit margin as Return on Investment (ROI) because the value of Gold is always on the rise in Western World Trading Market.
+									With this profit, which could be as high as 85% ROI on the value of the index capitalization on initial Gold investment, you and your partner
+									are on the way to a lifetime of accumulated wealth and prosperity forever.';
+							} else {
+								echo 'You have not been merged with any partner!';
+							}
+						?>
+					</p>
+
+
 				</div>
-				
 				
 				<div style="height:25px;"></div>
 				

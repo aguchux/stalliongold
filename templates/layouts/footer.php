@@ -40,7 +40,11 @@
                         <ul class="my_address">
                             <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>info@titangoldllcres.com</a></li>
                             <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>+971 52 711 5244</a></li>
+<<<<<<< HEAD
+                            <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>DMCC-EZ-03-04, Jumeirah Lakes Towers Dubai</span></a></li>
+=======
                             <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Plot No. 2H, Phase 2, Plot No.485-222, Jumeirah Lakes Towers, DMCC, Sheikh Zayed Road, P.O. Box 24307, Dubai, UAE </span></a></li>
+>>>>>>> 2eb4c0d9b7c0c22085d4375522a8efd992346785
                         </ul>
                     </address>
                 </div>

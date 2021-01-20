@@ -7,10 +7,17 @@ if(empty($Self->storage('user_id'))){
 }
 
 
-$Mysqli = new Apps\MysqliDb;
+
+$Mysqli_m = new Apps\MysqliDb;
+$Mysqli_u = new Apps\MysqliDb;
+
 $user = $Self->storage('user_id');
-$Mysqli->where("user_id",$user);
-$row  = $Mysqli->getOne('members');
+
+$Mysqli_m->where("user_id",$user);
+$row_m  = $Mysqli_m->getOne('merge');
+
+$Mysqli_u->where("user_id",$user);
+$row_u  = $Mysqli_u->getOne('members');
 
 ?>
 <!DOCTYPE html>
@@ -71,21 +78,33 @@ $row  = $Mysqli->getOne('members');
 				<hr>
 			</div>
 			
-				
-			<div id="top_content_second">				
-				<div>
-					<table>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>USERNAME</strong></td><td><?php echo $row["username"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>FULL NAME</strong></td><td><?php echo $row["fullname"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>EMAIL</strong></td><td><?php echo $row["email"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PASSWORD</strong></td><td><?php echo $row["password"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>DATE OF BIRTH</strong></td><td><?php echo $row["dateofbirth"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>COUNTRY</strong></td><td><?php echo $row["country"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PHOTO</strong></td><td><?php echo "<img src='_store/uploads/".$row["photo"]."' width=150 height=150 >"; ?></td></tr>
-					</table>
+			<div id="top_content_third">			
+				<div class="profile_form">
+					<form action="merge_process.php" method="POST" name="RegisterForm" id="RegisterForm" enctype="multipart/form-data">
+						<label>USER ID:</label>
+						<input name="user_id" type="text" id="user_id" value="<?php echo $_SESSION["user_id"]; ?>" required />
+						<label>AMOUNT OF GOLD ASSETS TO MERGE:</label>
+						<input name="mgGoldAmt" type="text" id="mgGoldAmt" value="<?php echo $_SESSION["mgGoldAmt"]; ?>" />
+						<label>CURRENCY (eg. Dollars, Pounds, Euros):</label>
+						<input name="mgGoldCurr" type="text" id="mgGoldCurr" value="<?php echo $_SESSION["mgGoldCurr"]; ?>" />
+						<label>FULL NAME:</label>
+						<input name="mgfullname" type="text" id="mgfullname" value="<?php echo $_SESSION["mgfullname"]; ?>" required />
+						<label>EMAIL:</label>
+						<input name="mgemail" type="text" id="mgemail" value="<?php echo $_SESSION["mgemail"]; ?>" required />
+						<label>DATE OF BIRTH:</label>
+						<input name="mgdateofbirth" type="text" id="mgdateofbirth" value="<?php echo $_SESSION["mgdateofbirth"]; ?>" required />
+						<label>ADDRESS:</label>
+						<input name="mgaddress" type="text" id="mgaddress" value="<?php echo $_SESSION["mgaddress"]; ?>" required />
+						<label>UPLOAD YOUR PARTNER'S PHOTO</label>
+						<input type="file" name="mgphoto" required />
+						<br>
+						<br>
+						<input type="submit" name="submit" value="MERGE WITH PARTNER" />
+					</form>
 				</div>
+				
 				<div class="edit_kong">
-					<a href="/database/merge"><div id="transactBar">GO BACK</div></a>
+					<a href="merge.php"><div id="transactBar">GO BACK</div></a>
 				</div>
 			</div>
 			
