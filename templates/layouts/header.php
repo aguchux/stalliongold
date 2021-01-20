@@ -45,7 +45,7 @@
 	<section class="top_header_area">
 	    <div class="container">
             <ul class="nav navbar-nav top_nav">
-                <li><a href="#"><i class="fa fa-phone"></i>+971 52 711 4638</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i>+971 52 711 5244</a></li>
                 <li><a href="#"><i class="fa fa-envelope-o"></i>info@titangoldllcres.com</a></li>
                 <li><a href="#"><i class="fa fa-clock-o"></i>Mon - Sat 09:00 - 18:00</a></li>
             </ul>
