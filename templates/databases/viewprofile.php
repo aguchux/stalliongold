@@ -87,7 +87,6 @@ $row  = $Mysqli->getOne('members');
 				
 				<div class="kong">
 					<a href="/database/editprofile"><div style="float:left;" id="transactBar">EDIT PROFILE</div></a>
-					<a href="/database/changepassword"><div style="float:right;" id="transactBar">CHANGE PASSWORD</div></a>
 				</div>
 			</div>
 			

@@ -80,21 +80,21 @@ $row_u  = $Mysqli_u->getOne('members');
 			
 			<div id="top_content_third">			
 				<div class="profile_form">
-					<form action="merge_process.php" method="POST" name="RegisterForm" id="RegisterForm" enctype="multipart/form-data">
+					<form action="database/merge_process" method="POST" name="RegisterForm" id="RegisterForm" enctype="multipart/form-data">
 						<label>USER ID:</label>
-						<input name="user_id" type="text" id="user_id" value="<?php echo $_SESSION["user_id"]; ?>" required />
+						<input name="user_id" type="text" id="user_id" value="<?php echo $row_u["user_id"]; ?>" required />
 						<label>AMOUNT OF GOLD ASSETS TO MERGE:</label>
-						<input name="mgGoldAmt" type="text" id="mgGoldAmt" value="<?php echo $_SESSION["mgGoldAmt"]; ?>" />
+						<input name="mgGoldAmt" type="text" id="mgGoldAmt" value="<?php echo $row_m["mgGoldAmt"]; ?>" />
 						<label>CURRENCY (eg. Dollars, Pounds, Euros):</label>
-						<input name="mgGoldCurr" type="text" id="mgGoldCurr" value="<?php echo $_SESSION["mgGoldCurr"]; ?>" />
+						<input name="mgGoldCurr" type="text" id="mgGoldCurr" value="<?php echo $row_m["mgGoldCurr"]; ?>" />
 						<label>FULL NAME:</label>
-						<input name="mgfullname" type="text" id="mgfullname" value="<?php echo $_SESSION["mgfullname"]; ?>" required />
+						<input name="mgfullname" type="text" id="mgfullname" value="<?php echo $row_m["mgfullname"]; ?>" required />
 						<label>EMAIL:</label>
-						<input name="mgemail" type="text" id="mgemail" value="<?php echo $_SESSION["mgemail"]; ?>" required />
+						<input name="mgemail" type="text" id="mgemail" value="<?php echo $row_m["mgemail"]; ?>" required />
 						<label>DATE OF BIRTH:</label>
-						<input name="mgdateofbirth" type="text" id="mgdateofbirth" value="<?php echo $_SESSION["mgdateofbirth"]; ?>" required />
+						<input name="mgdateofbirth" type="text" id="mgdateofbirth" value="<?php echo $row_m["mgdateofbirth"]; ?>" required />
 						<label>ADDRESS:</label>
-						<input name="mgaddress" type="text" id="mgaddress" value="<?php echo $_SESSION["mgaddress"]; ?>" required />
+						<input name="mgaddress" type="text" id="mgaddress" value="<?php echo $row_m["mgaddress"]; ?>" required />
 						<label>UPLOAD YOUR PARTNER'S PHOTO</label>
 						<input type="file" name="mgphoto" required />
 						<br>
@@ -104,7 +104,7 @@ $row_u  = $Mysqli_u->getOne('members');
 				</div>
 				
 				<div class="edit_kong">
-					<a href="merge.php"><div id="transactBar">GO BACK</div></a>
+					<a href="/database/merge"><div id="transactBar">GO BACK</div></a>
 				</div>
 			</div>
 			

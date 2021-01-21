@@ -62,3 +62,59 @@ $Route->add('/forms/database/changepassword', function () {
         $Template->redirect("/database/editprofile");
     }
 }, 'POST');
+
+
+$Route->add('/database/merge_process', function(){
+
+    $Mysqli = new Apps\MysqliDb;
+    $Template = new Apps\Template;
+
+    $cur_user_id = $Template->storage('user_id');
+
+	//The path to store the uploaded image
+	$target = "_store/uploads/".basename($_FILES['mgphoto']['name']);
+	$imageFileType = pathinfo($target,PATHINFO_EXTENSION);
+
+	//Insert the values into the database table
+	$user_id = $_POST['user_id'];
+	$mgGoldAmt = $_POST['mgGoldAmt'];
+	$mgGoldCurr = $_POST['mgGoldCurr'];
+	$mgfullname = $_POST['mgfullname'];
+	$mgemail = $_POST['mgemail'];
+	$mgdateofbirth = $_POST['mgdateofbirth'];
+	$mgaddress = $_POST['mgaddress'];
+    $mgphoto = $_FILES['mgphoto']['name'];
+
+	//Make sure file type is image
+	if (preg_match("!image!", $_FILES['mgphoto']['type'])) {
+		
+		//Uploading image into uploads/ folder and redirect to register_success.php page
+		if (move_uploaded_file($_FILES['mgphoto']['tmp_name'], $target)) {
+					
+			$result = (int)$Mysqli->insert("merge", array(
+				"user_id" => $cur_user_id,
+				"mgGoldAmt" => $mgGoldAmt,
+				"mgGoldCurr" => $mgGoldCurr,
+				"mgfullname" => $mgfullname,
+				"mgemail" => $mgemail,
+				"mgdateofbirth" => $mgdateofbirth,
+				"mgaddress" => $mgaddress,
+				"mgphoto" => $mgphoto
+            ));
+            if($result){
+                $row['message'] = "Merge successful!";
+                $Template->redirect("/database/merge");
+            }
+            $Template->redirect("/database/merge_form");
+		}
+		else {
+            $row['message'] = "File upload and Merge failed!";
+            $Template->redirect("/database/merge_form");
+		}
+	}
+	else {
+        $row['message'] = "Please, only upload JPG, PNG or GIF images!";
+        $Template->redirect("/database/merge_form");
+	}
+
+}, 'POST');

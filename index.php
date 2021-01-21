@@ -214,6 +214,13 @@ $Route->add('/database/merge_form', function () {
     $Template->render("databases.merge_form");
 }, 'GET');
 
+//Merge_process
+$Route->add('/database/merge_process', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | Account Area");
+    $Template->render("databases.merge_process");
+}, 'GET');
+
 //Terms and conditions
 $Route->add('/database/tandc', function () {
     $Template = new Apps\Template;
@@ -225,7 +232,7 @@ $Route->add('/database/tandc', function () {
 $Route->add('/database/changepassword', function () {
     $Template = new Apps\Template;
     $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.changepassword");
+    $Template->render("databases.editprofile");
 }, 'GET');
 
 //ADMIN DATABASE//
