@@ -1,13 +1,13 @@
 
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Putting customers' needs as a top priority and earning a spot as one of the world's best online gold platforms">
-	<meta name="keywords" content="gold, stallion, resources">
+	<meta name="keywords" content="gold, Titan, resources">
 
     <title><?= $title ?></title>
 	
@@ -45,7 +45,7 @@
 		<div class="sub-main-w3">
 			<div class="bg-content-w3pvt">
 				<div class="top-content-style">
-					<a href="/titangold"><img src="<?= $assets ?>images/sgr_user.png" alt="Stallion Gold"></a>
+					<a href="/"><img src="<?= $assets ?>images/sgr_user.png" alt="Titan Gold"></a>
 				</div>
 				<form action="/forms/login" method="post" enctype="multipart/form-data">
 				
@@ -74,7 +74,7 @@
 		<!-- //content -->
 		<!-- copyright -->
 		<div class="copyright">
-			<h2>Copyright 2019 All rights reserved.</h2>
+			<h2>Copyright 2021 All rights reserved.</h2>
 		</div>
 		<!-- //copyright -->
 	</div>
