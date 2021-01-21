@@ -3,8 +3,8 @@
     <section class="banner_area" data-stellar-background-ratio="0.5">
         <h2>About Us</h2>
         <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" class="active">About Us</a></li>
         </ol>
     </section>
     <!-- End Banner area -->
@@ -25,7 +25,7 @@
                         <h2>WHO WE ARE</h2>
                     </div>
                     <p>At Titan Gold & Resources , we specialize in online gold trading and investment, in addition to other gold-related processes such as gold assaying, refining and minting. We also have a wide range of gold products which private investors can buy/sell on their unique online portals. Over the past years, Titan Gold & Resourceshas moved up rapidly through the corporate ranks to a  position of leadership, with a large share in the fine gold market. We are rated one of the top companies in the world in the field of gold trading and investment. In addition, our organization is managed professionally with qualified manpower and a clear vision.</p>
-                    <a href="contact.html" class="button_all">Contact Us</a>
+                    <a href="/contact" class="button_all">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -38,8 +38,8 @@
             <h2>+971 52 711 5244</h2>
             <p>Opening an online account is free and registration takes only a few seconds. Access your online gold market today.</p>
             <div class="call_btn">
-                <a href="register.php" class="button_all">OPEN ACCOUNT</a>
-                <a href="login.php" class="button_all">LOGIN NOW</a>
+                <a href="/register" class="button_all">OPEN ACCOUNT</a>
+                <a href="/login" class="button_all">LOGIN NOW</a>
             </div>
         </div>
     </section>

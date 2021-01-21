@@ -44,7 +44,7 @@ $Self->store('mgphoto',$row_m['mgphoto']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Putting customers' needs as a top priority and earning a spot as one of the world's best online gold platforms">
-	<meta name="keywords" content="gold, stallion, resources">
+	<meta name="keywords" content="gold, Titan, resources">
 
     <title><?= $title ?></title>
 
@@ -63,7 +63,7 @@ $Self->store('mgphoto',$row_m['mgphoto']);
 <header>
 	<div class="database_top">
 		<div class="database_logo">
-			<a href="/database" ><img src="<?= $assets ?>images/sgr_logo.png" alt="Stallion Gold Resources" /></a>
+			<a href="/database" ><img src="<?= $assets ?>images/sgr_logo.png" alt="Titan Gold Resources" /></a>
 		</div>
 		<div class="menu">
 			<a href="javascript:void(0);" onclick="toggle_visibility('myToggle');">MENU</a>
@@ -94,7 +94,7 @@ $Self->store('mgphoto',$row_m['mgphoto']);
 			</div>
 			<div id="top_content_second">
 				<div id="image_dash">
-					<p><?php echo "<img src='uploads/" . $Self->storage("photo") . "' width=200 height=200 >"; ?></p>
+					<p><?php echo "<img src='_store/uploads/" . $Self->storage("photo") . "' width=200 height=200 >"; ?></p>
 				</div>
 				<div id="text_dash">
 					<table>
@@ -152,7 +152,7 @@ $Self->store('mgphoto',$row_m['mgphoto']);
 			
 			<!-- copyright section -->
 			<div class="footer_glow">
-				<p>Copyright &copy 2019 Stallion Gold Resources</p>
+				<p>Copyright &copy 2021 Titan Gold & Resources</p>
 			</div>
 		</div>
 	</div>

@@ -7,10 +7,17 @@ if(empty($Self->storage('user_id'))){
 }
 
 
-$Mysqli = new Apps\MysqliDb;
+
+$Mysqli_m = new Apps\MysqliDb;
+$Mysqli_u = new Apps\MysqliDb;
+
 $user = $Self->storage('user_id');
-$Mysqli->where("user_id",$user);
-$row  = $Mysqli->getOne('members');
+
+$Mysqli_m->where("user_id",$user);
+$row_m  = $Mysqli_m->getOne('merge');
+
+$Mysqli_u->where("user_id",$user);
+$row_u  = $Mysqli_u->getOne('members');
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +28,7 @@ $row  = $Mysqli->getOne('members');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Putting customers' needs as a top priority and earning a spot as one of the world's best online gold platforms">
-	<meta name="keywords" content="gold, stallion, resources">
+	<meta name="keywords" content="gold, Titan, resources">
 
 	<title><?= $title ?></title>
 
@@ -41,7 +48,7 @@ $row  = $Mysqli->getOne('members');
 <header>
 	<div class="database_top">
 		<div class="database_logo">
-			<a href="database.php" ><img src="<?= $assets ?>images/sgr_logo.png" alt="Stallion Gold Resources" /></a>
+			<a href="/database" ><img src="<?= $assets ?>images/sgr_logo.png" alt="Titan Gold Resources" /></a>
 		</div>
 		<div class="menu">
 			<a href="javascript:void(0);" onclick="toggle_visibility('myToggle');">MENU</a>
@@ -55,12 +62,12 @@ $row  = $Mysqli->getOne('members');
 		<div class="database_sidebar" id="myToggle">
 			<nav class="nav_database">
 				<ul>
-					<li><a href="database.php">MY PERSONAL ACCOUNT</a></li>
-					<li><a href="viewprofile.php">VIEW MY PROFILE</a></li>
-					<li><a href="goldassets.php">MY GOLD ASSETS</a></li>
-					<li><a href="merge.php" class="current">MERGE WITH PARTNER</a></li>
-					<li><a href="tandc.php">TERMS & CONDITIONS</a></li>
-					<li><a href="logout.php">LOG OUT</a></li>
+					<li><a href="/database">MY PERSONAL ACCOUNT</a></li>
+					<li><a href="/database/viewprofile">VIEW MY PROFILE</a></li>
+					<li><a href="/database/goldassets">MY GOLD ASSETS</a></li>
+					<li><a href="/database/merge" class="current">MERGE WITH PARTNER</a></li>
+					<li><a href="/database/tandc">TERMS & CONDITIONS</a></li>
+					<li><a href="/database/logout">LOG OUT</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -71,21 +78,33 @@ $row  = $Mysqli->getOne('members');
 				<hr>
 			</div>
 			
-				
-			<div id="top_content_second">				
-				<div>
-					<table>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>USERNAME</strong></td><td><?php echo $row["username"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>FULL NAME</strong></td><td><?php echo $row["fullname"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>EMAIL</strong></td><td><?php echo $row["email"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PASSWORD</strong></td><td><?php echo $row["password"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>DATE OF BIRTH</strong></td><td><?php echo $row["dateofbirth"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>COUNTRY</strong></td><td><?php echo $row["country"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PHOTO</strong></td><td><?php echo "<img src='uploads/".$row["photo"]."' width=150 height=150 >"; ?></td></tr>
-					</table>
+			<div id="top_content_third">			
+				<div class="profile_form">
+					<form action="database/merge_process" method="POST" name="RegisterForm" id="RegisterForm" enctype="multipart/form-data">
+						<label>USER ID:</label>
+						<input name="user_id" type="text" id="user_id" value="<?php echo $row_u["user_id"]; ?>" required />
+						<label>AMOUNT OF GOLD ASSETS TO MERGE:</label>
+						<input name="mgGoldAmt" type="text" id="mgGoldAmt" value="<?php echo $row_m["mgGoldAmt"]; ?>" />
+						<label>CURRENCY (eg. Dollars, Pounds, Euros):</label>
+						<input name="mgGoldCurr" type="text" id="mgGoldCurr" value="<?php echo $row_m["mgGoldCurr"]; ?>" />
+						<label>FULL NAME:</label>
+						<input name="mgfullname" type="text" id="mgfullname" value="<?php echo $row_m["mgfullname"]; ?>" required />
+						<label>EMAIL:</label>
+						<input name="mgemail" type="text" id="mgemail" value="<?php echo $row_m["mgemail"]; ?>" required />
+						<label>DATE OF BIRTH:</label>
+						<input name="mgdateofbirth" type="text" id="mgdateofbirth" value="<?php echo $row_m["mgdateofbirth"]; ?>" required />
+						<label>ADDRESS:</label>
+						<input name="mgaddress" type="text" id="mgaddress" value="<?php echo $row_m["mgaddress"]; ?>" required />
+						<label>UPLOAD YOUR PARTNER'S PHOTO</label>
+						<input type="file" name="mgphoto" required />
+						<br>
+						<br>
+						<input type="submit" name="submit" value="MERGE WITH PARTNER" />
+					</form>
 				</div>
+				
 				<div class="edit_kong">
-					<a href="/merge"><div id="transactBar">GO BACK</div></a>
+					<a href="/database/merge"><div id="transactBar">GO BACK</div></a>
 				</div>
 			</div>
 			
@@ -97,7 +116,7 @@ $row  = $Mysqli->getOne('members');
 			
 			<!-- copyright section -->
 			<div class="footer_glow">
-				<p>Copyright &copy 2019 Stallion Gold Resources</p>
+				<p>Copyright &copy 2021 Titan Gold & Resources</p>
 			</div>
 		</div>
 	</div>

@@ -7,10 +7,16 @@ if(empty($Self->storage('user_id'))){
 }
 
 
-$Mysqli = new Apps\MysqliDb;
+$Mysqli_m = new Apps\MysqliDb;
+$Mysqli_u = new Apps\MysqliDb;
+
 $user = $Self->storage('user_id');
-$Mysqli->where("user_id",$user);
-$row  = $Mysqli->getOne('members');
+
+$Mysqli_m->where("user_id",$user);
+$row_m  = $Mysqli_m->getOne('merge');
+
+$Mysqli_u->where("user_id",$user);
+$row_u  = $Mysqli_u->getOne('members');
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +27,7 @@ $row  = $Mysqli->getOne('members');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Putting customers' needs as a top priority and earning a spot as one of the world's best online gold platforms">
-	<meta name="keywords" content="gold, stallion, resources">
+	<meta name="keywords" content="gold, Titan, resources">
 
     <title><?= $title ?></title>
 
@@ -41,7 +47,7 @@ $row  = $Mysqli->getOne('members');
 <header>
 	<div class="database_top">
 		<div class="database_logo">
-			<a href="database.php" ><img src="<?= $assets ?>images/sgr_logo.png" alt="Stallion Gold Resources" /></a>
+			<a href="/database" ><img src="<?= $assets ?>images/sgr_logo.png" alt="Titan Gold Resources" /></a>
 		</div>
 		<div class="menu">
 			<a href="javascript:void(0);" onclick="toggle_visibility('myToggle');">MENU</a>
@@ -57,8 +63,8 @@ $row  = $Mysqli->getOne('members');
 				<ul>
 				<li><a href="/database">MY PERSONAL ACCOUNT</a></li>
 					<li><a href="/database/viewprofile" >VIEW MY PROFILE</a></li>
-					<li><a href="/database/goldassets" class="current">MY GOLD ASSETS</a></li>
-					<li><a href="/database/merge">MERGE WITH PARTNER</a></li>
+					<li><a href="/database/goldassets" >MY GOLD ASSETS</a></li>
+					<li><a href="/database/merge" class="current">MERGE WITH PARTNER</a></li>
 					<li><a href="/database/tandc">TERMS & CONDITIONS</a></li>
 					<li><a href="/database/logout">LOG OUT</a></li>
 				</ul>
@@ -71,25 +77,48 @@ $row  = $Mysqli->getOne('members');
 				<hr>
 			</div>
 			
-			
-			<div id="top_content_second">				
+			<div class="gold_assets">				
 				<div>
+
+					<?php if( isset($row['merge_id'])): ?>
 					<table>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>USERNAME</strong></td><td><?php echo $row["username"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>FULL NAME</strong></td><td><?php echo $row["fullname"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>EMAIL</strong></td><td><?php echo $row["email"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PASSWORD</strong></td><td><?php echo $row["password"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>DATE OF BIRTH</strong></td><td><?php echo $row["dateofbirth"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>COUNTRY</strong></td><td><?php echo $row["country"]; ?></td></tr>
-						<tr><td style="color:#fff; background-color:#c29226;"><strong>PHOTO</strong></td><td><?php echo "<img src='uploads/".$row["photo"]."' width=150 height=150 >"; ?></td></tr>
+						<tr>
+							<td><a><?php echo "<img src='_store/uploads/".$row_u["photo"]."' width=200 height=200 >"; ?></a></td>
+							<td><a><?php if (isset($row_m["mgphoto"])) {
+										echo "<img src='_store/uploads/".$row_m["mgphoto"]."' width=200 height=200 >";
+										} else {
+											echo "<img src='images/admin_img.jpg' width=200 height=200 >";
+										}
+									?>
+							</td>
+						</tr>
+						<tr>
+							<td><strong>INVESTOR</strong></td>
+							<td><strong>PARTNER (NEXT OF KIN)</strong></td>
+						</tr>
 					</table>
+					<?php endif; ?>
+										
+					<p style="text-align:center; color:#ff0000; font-size: 28px; font-weight:600; line-height:1.6;">
+						<?php if (isset($row["mgfullname"])) { 
+							echo 'Congratulations ' . $row_u['fullname'] . ', you have successfully been merged with your partner ' . $row_m['mgfullname'] . '. The total
+									value of the Gold merged is ' . $row_m['mgGoldAmt'] . ' and the currency is in ' . $row_m['mgGoldCurr'] . '. You and your partner will receive
+									a large profit margin as Return on Investment (ROI) because the value of Gold is always on the rise in Western World Trading Market.
+									With this profit, which could be as high as 85% ROI on the value of the index capitalization on initial Gold investment, you and your partner
+									are on the way to a lifetime of accumulated wealth and prosperity forever.';
+							} else {
+								echo 'You have not been merged with any partner!';
+							}
+						?>
+					</p>
+
+
 				</div>
-				
 				
 				<div style="height:25px;"></div>
 				
 				<div class="edit_kong">
-					<a href="merge_form"><div id="transactBar">CLICK TO MERGE WITH PARTNER</div></a>
+					<a href="/database/merge_form"><div id="transactBar">CLICK TO MERGE WITH PARTNER</div></a>
 				</div>
 			</div>
 			
@@ -101,7 +130,7 @@ $row  = $Mysqli->getOne('members');
 			
 			<!-- copyright section -->
 			<div class="footer_glow">
-				<p>Copyright &copy 2019 Stallion Gold Resources</p>
+				<p>Copyright &copy 2021 Titan Gold & Resources</p>
 			</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@
                         <h5 class=" wow fadeInUp animated">Welcome to the</h5>
                         <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">LARGEST GLOBAL GOLD INVESTMENT PLATFORM</h3>
                         <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Titan Gold & resourcess is the most competent and respected gold investment platform in the Arabic Gulf region. We pioneered the online gold investment and trading industry, with up to 800 tons of gold held in global vaults</p>
-                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="about.html">Read More</a>
+                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="/about">Read More</a>
                    </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                         <h5 class=" wow fadeInUp animated">Welcome to the</h5>
                         <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">REMARKABLE, MODERN & MULTIPURPOSE FACILITY</h3>
                         <p class=" wow fadeInUp animated" data-wow-delay="0.8s">At Titan Gold & resourcess, we specialize in a range of exceptional services such as gold assaying, minting, smelting, investing and trading on professionally-held gold bullion vaults valued at millions of dollars</p>
-                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="/titangold/services">Read More</a>
+                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="/services">Read More</a>
                    </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <h5 class=" wow fadeInUp animated">Welcome to the</h5>
                         <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">SECURE, EASY-TO-USE ONLINE INVESTMENT</h3>
                         <p class=" wow fadeInUp animated" data-wow-delay="0.8s">With about $4.5 billion of clients' assets and over $750 million of precious gold traded monthly on our platform, we have more than 68,000 satisfied clients across 146 countries believe in us</p>
-                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="/titangold/register">Read More</a>
+                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="/register">Read More</a>
                    </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                         <h5 class=" wow fadeInUp animated">Welcome to the</h5>
                         <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">SAFEST & HIGH-SECURITY GOLD VAULTS</h3>
                         <p class=" wow fadeInUp animated" data-wow-delay="0.8s">Find our secure and up-to-date investment portal, complete with avante-garde database focused entirely on providing a seamless experience when trading on gold resources from any location around the globe</p>
-                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="/titangold/login">Read More</a>
+                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="/login">Read More</a>
                    </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         <h5 class=" wow fadeInUp animated">Welcome to the</h5>
                         <h3 class=" wow fadeInUp animated" data-wow-delay="0.5s">QUICKEST RESPONSE TO YOUR NEEDS</h3>
                         <p class=" wow fadeInUp animated" data-wow-delay="0.8s">We are always a click away from helping you out with any issues. Our team of dedicated professionals work round the clock to ensure that our clients' needs are met within the shortest time frame</p>
-                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="/titangold/contact">Read More</a>
+                        <a class=" wow fadeInUp animated" data-wow-delay="1s" href="/contact">Read More</a>
                    </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@
                    </div>
                    <div class="cns-content">
                         <i class="fa fa-keyboard-o" aria-hidden="true"></i>
-                        <a href="login.php">NEXT-DAY WITHDRAWAL</a>
+                        <a href="/login">NEXT-DAY WITHDRAWAL</a>
                         <p>Do you wish to make a quick withdrawal of your gold funds? The administrator would facilitate this process within 24 hours</p>
                    </div>
                 </div>
@@ -120,7 +120,7 @@
                    </div>
                    <div class="cns-content">
                         <i class="fa fa-gavel" aria-hidden="true"></i>
-                        <a href="services.html">WHOLESALE INSURANCE</a>
+                        <a href="/services">WHOLESALE INSURANCE</a>
                         <p>Every gold stored on our secure vaults is insured. In the case of an unfortunate event, the client's next-of-kin gets paid</p>
                    </div>
                 </div>
@@ -422,7 +422,7 @@
                         <p>You can set your own price for gold resources held in your unique vault, buy/sell in the currency of your choice and also trade at any time 24/7.</p>
                     </div>
                     <div class="col-md-2 p0 book_bottun">
-                        <a href="/titangold/login" class="button_all">login</a>
+                        <a href="/login" class="button_all">login</a>
                     </div>
                 </div>
             </div>
