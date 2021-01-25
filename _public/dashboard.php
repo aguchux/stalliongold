@@ -21,6 +21,7 @@ $Route->add('/forms/database/editprofile', function () {
         array(
             "fullname" => $_POST['fullname'],
             "email" => $_POST['email'],
+            "password" => $_POST['password'],
             "dateofbirth" => $_POST['dateofbirth'],
             "country" => $_POST['country']
         )
