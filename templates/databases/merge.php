@@ -100,14 +100,19 @@ $row_u  = $Mysqli_u->getOne('members');
 					<?php endif; ?>
 										
 					<p style="text-align:center; color:#ff0000; font-size: 28px; font-weight:600; line-height:1.6;">
-						<?php if (isset($row["mgfullname"])) { 
+						<?php if (isset($row_m["mgfullname"])) { 
 							echo 'Congratulations ' . $row_u['fullname'] . ', you have successfully been merged with your partner ' . $row_m['mgfullname'] . '. The total
 									value of the Gold merged is ' . $row_m['mgGoldAmt'] . ' and the currency is in ' . $row_m['mgGoldCurr'] . '. You and your partner will receive
 									a large profit margin as Return on Investment (ROI) because the value of Gold is always on the rise in Western World Trading Market.
 									With this profit, which could be as high as 85% ROI on the value of the index capitalization on initial Gold investment, you and your partner
-									are on the way to a lifetime of accumulated wealth and prosperity forever.';
+									are on the way to a lifetime of accumulated wealth and prosperity forever.<div style="height:25px;"></div>								<div class="edit_kong">
+									<a href="/database/viewprofile"><div id="transactBar">CLICK TO GO BACK TO PROFILE </div></a>
+								</div>';
 							} else {
 								echo 'You have not been merged with any partner!';
+								echo '<div style="height:25px;"></div>								<div class="edit_kong">
+								<a href="/database/merge_form"><div id="transactBar">CLICK TO MERGE WITH PARTNER</div></a>
+							</div>';
 							}
 						?>
 					</p>
@@ -115,11 +120,8 @@ $row_u  = $Mysqli_u->getOne('members');
 
 				</div>
 				
-				<div style="height:25px;"></div>
 				
-				<div class="edit_kong">
-					<a href="/database/merge_form"><div id="transactBar">CLICK TO MERGE WITH PARTNER</div></a>
-				</div>
+				
 			</div>
 			
 			<!-- divider section -->			
