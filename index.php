@@ -16,27 +16,7 @@ $Route->add('/', function () {
     $Template->assign("title", "TITAN GOLD | Home");
     $Template->render("home");
 }, 'GET');
-$Route->add('/about-us', function () {
-    $Template = new Apps\Template;
-    $Template->addheader("layouts.header");
-    $Template->addfooter("layouts.footer");
-    $Template->assign("title", "TITAN GOLD | ABOUT US");
-    $Template->render("about-us");
-}, 'GET');
-$Route->add('/services', function () {
-    $Template = new Apps\Template;
-    $Template->addheader("layouts.header");
-    $Template->addfooter("layouts.footer");
-    $Template->assign("title", "TITAN GOLD | SERVICES");
-    $Template->render("services");
-}, 'GET');
-$Route->add('/contact-us', function () {
-    $Template = new Apps\Template;
-    $Template->addheader("layouts.header");
-    $Template->addfooter("layouts.footer");
-    $Template->assign("title", "TITAN GOLD | CONTACT-US");
-    $Template->render("contact-us");
-}, 'GET');
+
 $Route->add('/login', function () {
     $Template = new Apps\Template;
     $Template->assign("title", "TITAN GOLD | login");
@@ -52,6 +32,18 @@ $Route->add('/register_success', function () {
     $Template->assign("title", "TITAN GOLD | Thank You");
     $Template->render("register_success");
 }, 'GET');
+
+//About-us, contact-us & services
+$Route->add('/{vary}', function ($vary) {
+    $Template = new Apps\Template;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.footer");
+    $Template->assign("title", "TITAN GOLD | ABOUT US");
+    $Template->render("{$vary}");
+}, 'GET');
+
+
+
 //Home page//
 
 
@@ -88,7 +80,7 @@ $Route->add('/forms/login', function () {
         $Template->store("fullname", $row['fullname']);
         $Template->store("photo", $row['photo']);
 
-        $Template->redirect("/database");
+        $Template->redirect("/database/database");
     } else {
         $Template->store("message", "Wrong username/password. Please try again!");
         $Template->redirect("/login");
@@ -172,71 +164,27 @@ $Route->add('/forms/register', function () {
 
 
 
-//ADMIN DATABASE//
+//DATABASE//
 
-$Route->add('/database', function () {
+//editprofile, changepassword, tandc, merge....
+$Route->add('/database/{page}', function ($page) {
     $Template = new Apps\Template;
     $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("database");
+    $Template->render("databases.{$page}");
 }, 'GET');
-// View profile
-$Route->add('/database/viewprofile', function () {
+
+//DATABASE//
+
+//ADMIN DATABASE
+
+$Route->add('/database/admin_database/{admin}', function ($admin) {
     $Template = new Apps\Template;
     $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.viewprofile");
+    $Template->render("databases.admin-database.{$admin}");
 }, 'GET');
 
-//Gold assets
-$Route->add('/database/goldassets', function () {
-    $Template = new Apps\Template;
-    $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.goldassets");
-}, 'GET');
 
-//Edit Profile
-$Route->add('/database/editprofile', function () {
-    $Template = new Apps\Template;
-    $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.editprofile");
-}, 'GET');
-
-//Merge
-$Route->add('/database/merge', function () {
-    $Template = new Apps\Template;
-    $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.merge");
-}, 'GET');
-
-//Merge_form
-$Route->add('/database/merge_form', function () {
-    $Template = new Apps\Template;
-    $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.merge_form");
-}, 'GET');
-
-//Merge_process
-$Route->add('/database/merge_process', function () {
-    $Template = new Apps\Template;
-    $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.merge_process");
-}, 'GET');
-
-//Terms and conditions
-$Route->add('/database/tandc', function () {
-    $Template = new Apps\Template;
-    $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.tandc");
-}, 'GET');
-
-//Change password
-$Route->add('/database/changepassword', function () {
-    $Template = new Apps\Template;
-    $Template->assign("title", "TITAN GOLD | Account Area");
-    $Template->render("databases.editprofile");
-}, 'GET');
-
-//ADMIN DATABASE//
-
+//ADMIN DATABASE
 
 //Logout Sessions//
 $Route->add(
