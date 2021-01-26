@@ -39,13 +39,13 @@ define("session_delete_timout",30);
 define("auth_session_key","logged_in");
 define("auth_url","/login");
 
-define("domain", "https://titangoldllc.com/");
+define("domain", "http://localhost/titangold/");
 //define("domain", "https://titangoldllc.com/");
 
 define("db_host","localhost");
-define("db_user","qhfdxkia_idgdb");
-define("db_password","RTY4782^r23r23rfe");
-define("db_name","qhfdxkia_idgdb");
+define("db_user","root");//qhfdxkia_idgdb
+define("db_password","");//RTY4782^r23r23rfe
+define("db_name","titangolddb");//qhfdxkia_idgdb
 define("db_port",null);
 define("db_charset","utf8");
 define("db_socket",null);
