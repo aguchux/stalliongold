@@ -1,3 +1,13 @@
+<?php
+session_start();
+//If your session isn't valid, it returns you to the login screen for protection
+
+$Mysqli = new Apps\MysqliDb;
+$user = $Self->storage('user_id');
+$Mysqli->where("user_id",$user);
+$row  = $Mysqli->getOne('members');
+
+?>
 <!DOCTYPE HTML>
 <html lang="zxx">
 
@@ -48,7 +58,7 @@
 				</div>
 				<form action="/forms/admin_login" method="post">
 					<p class="legend">Admin Login Here<span class="fa fa-hand-o-down"></span></p>
-					<div style="text-align:center; color:#ff0000; font-size:15px; font-weight:400;"><?= $_SESSION['message'] ?></div>
+					<div style="text-align:center; color:#ff0000; font-size:15px; font-weight:400;"><?= $row['message'] ?></div>
 					<div class="input">
 						<input type="text" placeholder="Username" name="username" required />
 						<span class="fa fa-user"></span>

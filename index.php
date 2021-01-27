@@ -34,14 +34,35 @@ $Route->add('/register_success', function () {
 }, 'GET');
 
 //About-us, contact-us & services
-$Route->add('/{vary}', function ($vary) {
+$Route->add('/about-us', function () {
     $Template = new Apps\Template;
     $Template->addheader("layouts.header");
     $Template->addfooter("layouts.footer");
     $Template->assign("title", "TITAN GOLD | ABOUT US");
-    $Template->render("{$vary}");
+    $Template->render("about-us");
 }, 'GET');
 
+$Route->add('/services', function () {
+    $Template = new Apps\Template;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.footer");
+    $Template->assign("title", "TITAN GOLD | ABOUT US");
+    $Template->render("services");
+}, 'GET');
+
+$Route->add('/contact-us', function () {
+    $Template = new Apps\Template;
+    $Template->addheader("layouts.header");
+    $Template->addfooter("layouts.footer");
+    $Template->assign("title", "TITAN GOLD | ABOUT US");
+    $Template->render("contact-us");
+}, 'GET');
+
+$Route->add('/database', function () {
+    $Template = new Apps\Template;
+    $Template->assign("title", "TITAN GOLD | ABOUT US");
+    $Template->render("database");
+}, 'GET');
 
 
 //Home page//
