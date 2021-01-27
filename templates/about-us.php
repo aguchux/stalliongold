@@ -25,7 +25,7 @@
                         <h2>WHO WE ARE</h2>
                     </div>
                     <p>At Titan Gold & Resources , we specialize in online gold trading and investment, in addition to other gold-related processes such as gold assaying, refining and minting. We also have a wide range of gold products which private investors can buy/sell on their unique online portals. Over the past years, Titan Gold & Resourceshas moved up rapidly through the corporate ranks to a  position of leadership, with a large share in the fine gold market. We are rated one of the top companies in the world in the field of gold trading and investment. In addition, our organization is managed professionally with qualified manpower and a clear vision.</p>
-                    <a href="/contact" class="button_all">Contact Us</a>
+                    <a href="/contact-us" class="button_all">Contact Us</a>
                 </div>
             </div>
         </div>

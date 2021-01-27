@@ -31,7 +31,7 @@
                             </div>
                             <p>At Titan Gold & Resources, we specialize in a range of exceptional services such as gold assaying, minting, refining, investing and trading on professionally-held gold resources in secure global bullion vaults valued at millions of dollars.</p>
                             <p>Operating for more than 35 years in Dubai, Stallion Gold Resources is the most competent and respected gold investment platform in the Arabic Gulf region. We pioneered the online gold trading and investment industry, with up to 800 tons of gold per year held in global vaults.</p>
-                            <a href="/contact" class="button_all">Contact Now</a>
+                            <a href="/contact-us" class="button_all">Contact Now</a>
                         </div>
                     </div>
                     <div class="single_facilities col-sm-5 painting webdesign">

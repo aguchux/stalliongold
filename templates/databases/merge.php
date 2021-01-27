@@ -105,22 +105,23 @@ $row_u  = $Mysqli_u->getOne('members');
 									value of the Gold merged is ' . $row_m['mgGoldAmt'] . ' and the currency is in ' . $row_m['mgGoldCurr'] . '. You and your partner will receive
 									a large profit margin as Return on Investment (ROI) because the value of Gold is always on the rise in Western World Trading Market.
 									With this profit, which could be as high as 85% ROI on the value of the index capitalization on initial Gold investment, you and your partner
-									are on the way to a lifetime of accumulated wealth and prosperity forever.';
+									are on the way to a lifetime of accumulated wealth and prosperity forever.<div style="height:25px;"></div>								<div class="edit_kong">
+									<a href="/database/viewprofile"><div id="transactBar">CLICK TO GO BACK TO PROFILE </div></a>
+								</div>';
 							} else {
-								echo 'You have not been merged with any partner!	</div>
-				
-								<div style="height:25px;"></div>
-								
-								<div class="edit_kong">
-									<a href="/database/merge_form"><div id="transactBar">CLICK TO MERGE WITH PARTNER</div></a>
-								</div>
+								echo 'You have not been merged with any partner!<div style="height:25px;"></div>								<div class="edit_kong">
+								<a href="/database/merge_form"><div id="transactBar">CLICK TO MERGE WITH PARTNER</div></a>
 							</div>';
 							}
 						?>
 					</p>
 
 
-			
+				</div>
+				
+				
+				
+			</div>
 			
 			<!-- divider section -->			
 			<div class="under_gee">
