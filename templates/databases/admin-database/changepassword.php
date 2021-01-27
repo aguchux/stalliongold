@@ -1,25 +1,19 @@
 <?php
 session_start();
 //If your session isn't valid, it returns you to the login screen for protection
-if(empty($_SESSION['user_id'])){
-	header("Location: login.php"); /*Redirect Browser*/
-	die;
+if(empty($Self->storage('user_id'))){
+	$Self->redirect("/login"); 
+	/*Redirect Browser*/
 }
+
+
+$Mysqli = new Apps\MysqliDb;
+$user = $Self->storage('user_id');
+$Mysqli->where("user_id",$user);
+$row  = $Mysqli->getOne('members');
+
 ?>
 
-<?php
-
-	require 'connections/connections.php';
-	
-	$user = $_SESSION['user_id'];
-	
-	// Getting user information
-	$sqli = "SELECT password FROM members WHERE user_id='$user'";
-	$result = mysqli_query($conn, $sqli);
-	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-	
-	$_SESSION["password"] = $row['password'];
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,14 +22,14 @@ if(empty($_SESSION['user_id'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Putting customers' needs as a top priority and earning a spot as one of the world's best online gold platforms">
-	<meta name="keywords" content="gold, stallion, resources">
+	<meta name="keywords" content="gold, Titan, resources">
 
-    <title>Stallion Gold Resources | Welcome</title>
+    <title>Titan Gold Resources | Welcome</title>
 
 	<!-- css files -->
-	<link rel="stylesheet" href="css/database.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="<?= $assets ?>css/database.css" type="text/css" media="all" />
 	<!-- Style-CSS -->
-	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="<?= $assets ?>css/font-awesome.min.css" rel="stylesheet">
 	<!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
 
@@ -47,7 +41,7 @@ if(empty($_SESSION['user_id'])){
 <header>
 	<div class="database_top">
 		<div class="database_logo">
-			<a href="database.php" ><img src="images/sgr_logo.png" alt="Stallion Gold Resources" /></a>
+			<a href="/admin_database/database" ><img src="<?= $assets ?>images/sgr_logo.png" alt="Titan Gold Resources" /></a>
 		</div>
 		<div class="menu">
 			<a href="javascript:void(0);" onclick="toggle_visibility('myToggle');">MENU</a>
@@ -61,12 +55,12 @@ if(empty($_SESSION['user_id'])){
 		<div class="database_sidebar" id="myToggle">
 			<nav class="nav_database">
 				<ul>
-					<li><a href="database.php">MY PERSONAL ACCOUNT</a></li>
-					<li><a href="viewprofile.php" class="current">VIEW MY PROFILE</a></li>
-					<li><a href="goldassets.php">MY GOLD ASSETS</a></li>
-					<li><a href="merge.php">MERGE WITH PARTNER</a></li>
-					<li><a href="tandc.php">TERMS & CONDITIONS</a></li>
-					<li><a href="logout.php">LOG OUT</a></li>
+					<li><a href="/admin_database/database">MY PERSONAL ACCOUNT</a></li>
+					<li><a href="/database/viewprofile" class="current">VIEW MY PROFILE</a></li>
+					<li><a href="/database/goldassets">MY GOLD ASSETS</a></li>
+					<li><a href="/database/merge">MERGE WITH PARTNER</a></li>
+					<li><a href="/database/tandc">TERMS & CONDITIONS</a></li>
+					<li><a href="/database/logout">LOG OUT</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -79,9 +73,9 @@ if(empty($_SESSION['user_id'])){
 			
 			<div id="top_content_third">				
 				<div class="profile_form">
-					<form action="process_changepassword.php" method="POST" name="RegisterForm" id="RegisterForm" enctype="multipart/form-data">
+					<form action="/forms/admin_database/changepassword" method="POST" name="RegisterForm" id="RegisterForm" enctype="multipart/form-data">
 						<label>OLD PASSWORD:</label>
-						<input name="old_password" type="text" id="old_password" value="<?php echo $_SESSION["password"]; ?>" required />
+						<input name="old_password" type="text" id="old_password" value="<?php echo $row["password"]; ?>" required />
 						<label>NEW PASSWORD:</label>
 						<input name="new_password" type="text" id="new_password" required />
 						<br>
@@ -91,7 +85,7 @@ if(empty($_SESSION['user_id'])){
 				</div>
 				
 				<div class="edit_kong">
-					<a href="viewprofile.php"><div id="transactBar">GO BACK</div></a>
+					<a href="/admin_database/database"><div id="transactBar">GO BACK</div></a>
 				</div>
 			</div>
 			
@@ -103,7 +97,7 @@ if(empty($_SESSION['user_id'])){
 			
 			<!-- copyright section -->
 			<div class="footer_glow">
-				<p>Copyright &copy 2019 Stallion Gold Resources</p>
+				<p>Copyright &copy 2021 Titan Gold Resources</p>
 			</div>
 		</div>
 	</div>
@@ -111,15 +105,15 @@ if(empty($_SESSION['user_id'])){
 
 
 <!-- javascript js -->	
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>	
-<script src="js/nivo-lightbox.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/jquery.menu.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/isotope.js"></script>
-<script src="js/imagesloaded.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="<?= $assets ?>js/jquery.js"></script>
+<script src="<?= $assets ?>js/bootstrap.min.js"></script>	
+<script src="<?= $assets ?>js/nivo-lightbox.min.js"></script>
+<script src="<?= $assets ?>js/smoothscroll.js"></script>
+<script src="<?= $assets ?>js/jquery.menu.js"></script>
+<script src="<?= $assets ?>js/jquery.nav.js"></script>
+<script src="<?= $assets ?>js/isotope.js"></script>
+<script src="<?= $assets ?>js/imagesloaded.min.js"></script>
+<script src="<?= $assets ?>js/custom.js"></script>
 
 </body>
 </html>

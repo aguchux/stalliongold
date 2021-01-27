@@ -6,7 +6,7 @@ require_once DOT . "/bootstrap.php";
 
 
 require_once DOT . "/_public/dashboard.php";
-
+require_once DOT . "/_public/admin_dashboard.php";
 
 //Home page//
 $Route->add('/', function () {
@@ -50,6 +50,43 @@ $Route->add('/{vary}', function ($vary) {
 
 
 //FORM POSTS//
+//admin_login
+$Route->add('/forms/admin_login', function () {
+
+    $Mysqli = new Apps\MysqliDb;
+
+    $Template = new Apps\Template;
+    $Template->store("message", "");
+
+    //Insert the values into the database table
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $Mysqli->where('username', $username);
+    $row = $Mysqli->getOne("members");
+    $passtreu =  ($password == $row['password']);
+
+    //If username and password match, then populate database
+    if ($passtreu) {
+        $sqli = $Mysqli->insert("login", array(
+            "username" => $username
+        ));
+
+        //Start some sessions necessary in My Account Profile
+        $Template->authorize($row['user_id']);
+        $Template->store("user_id", $row['user_id']);
+        $Template->store("username", $row['username']);
+        $Template->store("fullname", $row['fullname']);
+        $Template->store("photo", $row['photo']);
+
+        $Template->redirect("/admin_database/database");
+    } else {
+        $Template->store("message", "Wrong username/password. Please try again!");
+        $Template->redirect("/admin_database/login");
+    }
+}, 'POST');
+
 //Login post
 $Route->add('/forms/login', function () {
 
@@ -80,7 +117,7 @@ $Route->add('/forms/login', function () {
         $Template->store("fullname", $row['fullname']);
         $Template->store("photo", $row['photo']);
 
-        $Template->redirect("/database/database");
+        $Template->redirect("/database");
     } else {
         $Template->store("message", "Wrong username/password. Please try again!");
         $Template->redirect("/login");
@@ -177,7 +214,7 @@ $Route->add('/database/{page}', function ($page) {
 
 //ADMIN DATABASE
 
-$Route->add('/database/admin_database/{admin}', function ($admin) {
+$Route->add('/admin_database/{admin}', function ($admin) {
     $Template = new Apps\Template;
     $Template->assign("title", "TITAN GOLD | Account Area");
     $Template->render("databases.admin-database.{$admin}");
